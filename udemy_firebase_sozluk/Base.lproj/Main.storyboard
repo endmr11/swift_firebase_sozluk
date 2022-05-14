@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1VV-cQ-U1e">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Kelimeler-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="kelimelerSayfasi" title="Kelimeler" id="BYZ-38-t0r" customClass="ViewController" customModule="udemy_firebase_sozluk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="JCN-ft-Q6E">
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="H0W-61-9rl">
+                                <rect key="frame" x="0.0" y="139" width="414" height="723"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="kelimeHucre" id="afS-R7-CK6" customClass="KelimeHucreTableViewCell" customModule="udemy_firebase_sozluk" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="afS-R7-CK6" id="dqR-Ye-Np5">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0c-RN-J0F">
+                                                    <rect key="frame" x="72" y="11.5" width="55" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Türkçe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AQ-UD-MlF">
+                                                    <rect key="frame" x="290" y="11.5" width="51.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1AQ-UD-MlF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="b0c-RN-J0F" secondAttribute="trailing" constant="8" symbolic="YES" id="FGz-Ea-7JZ"/>
+                                                <constraint firstItem="1AQ-UD-MlF" firstAttribute="centerY" secondItem="dqR-Ye-Np5" secondAttribute="centerY" id="UE1-TE-3iJ"/>
+                                                <constraint firstItem="b0c-RN-J0F" firstAttribute="leading" secondItem="dqR-Ye-Np5" secondAttribute="leadingMargin" constant="52" id="YUV-FZ-UXl"/>
+                                                <constraint firstItem="b0c-RN-J0F" firstAttribute="centerY" secondItem="dqR-Ye-Np5" secondAttribute="centerY" id="dd7-hd-3Gs"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1AQ-UD-MlF" secondAttribute="trailing" constant="52.5" id="uZf-L7-p98"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ingilizceLabel" destination="b0c-RN-J0F" id="E5v-rX-fzV"/>
+                                            <outlet property="turkceLabel" destination="1AQ-UD-MlF" id="e0l-tL-FpG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="H0W-61-9rl" firstAttribute="top" secondItem="JCN-ft-Q6E" secondAttribute="bottom" id="8j1-SR-j2u"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="H0W-61-9rl" secondAttribute="bottom" id="P5h-Ue-Bgo"/>
+                            <constraint firstItem="H0W-61-9rl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ps8-Ug-B3m"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="H0W-61-9rl" secondAttribute="trailing" id="SFp-kM-sJ4"/>
+                            <constraint firstAttribute="trailing" secondItem="JCN-ft-Q6E" secondAttribute="trailing" id="Uqt-Rq-K4h"/>
+                            <constraint firstItem="JCN-ft-Q6E" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fUN-PL-PDw"/>
+                            <constraint firstItem="JCN-ft-Q6E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p5z-g5-IFn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Kelimeler" id="qXH-T2-js8"/>
+                    <connections>
+                        <outlet property="kelimeTableView" destination="H0W-61-9rl" id="Gsz-sg-BdQ"/>
+                        <outlet property="searchBar" destination="JCN-ft-Q6E" id="QLT-Iq-0wp"/>
+                        <segue destination="dKi-hJ-RbJ" kind="show" identifier="toDetay" id="VjY-jO-Kls"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="639" y="155"/>
+        </scene>
+        <!--Detay-->
+        <scene sceneID="GDQ-8m-XCo">
+            <objects>
+                <viewController id="dKi-hJ-RbJ" customClass="KelimeDetayViewController" customModule="udemy_firebase_sozluk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PwJ-Iu-rtl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgy-Bw-2sv">
+                                <rect key="frame" x="144.5" y="308" width="125" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Türkçe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuO-hp-Aag">
+                                <rect key="frame" x="149.5" y="576" width="115" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4Ax-LM-RAS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pgy-Bw-2sv" firstAttribute="top" secondItem="4Ax-LM-RAS" secondAttribute="top" constant="220" id="3de-sj-sB9"/>
+                            <constraint firstItem="pgy-Bw-2sv" firstAttribute="centerX" secondItem="PwJ-Iu-rtl" secondAttribute="centerX" id="CKi-7S-ArL"/>
+                            <constraint firstItem="tuO-hp-Aag" firstAttribute="centerX" secondItem="PwJ-Iu-rtl" secondAttribute="centerX" id="Hl7-7L-4Q0"/>
+                            <constraint firstItem="tuO-hp-Aag" firstAttribute="top" secondItem="pgy-Bw-2sv" secondAttribute="bottom" constant="220" id="Zop-0b-lWQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detay" id="4Vs-cn-uvb"/>
+                    <connections>
+                        <outlet property="ingilizceLabel" destination="pgy-Bw-2sv" id="8uq-aD-gVr"/>
+                        <outlet property="turkceLabel" destination="tuO-hp-Aag" id="qrO-ew-rvx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XCH-zz-VOT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1358" y="155"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eEv-DI-rZa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1VV-cQ-U1e" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oMY-rL-PXi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ap9-3o-LvY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Fq-1b-ZgM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-77" y="155"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
